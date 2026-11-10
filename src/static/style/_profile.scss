@@ -1,0 +1,167 @@
+@import 'variables';
+
+.profile-wrapper{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $black;
+    // padding-top: 5rem;
+    .title{
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .logo{
+
+                height: 100%;
+                width: 70%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-left: 6rem;
+                p{
+                    margin-left: 1rem;
+                    margin-top: 1rem;
+                    font-weight: bold;
+                    font-size: 1.4em;
+                    color: $primary-color;
+                }
+                img{
+                    height: 60%;
+                    margin-top: 1.5rem;
+                    border-radius: 50%;
+                    margin: 1rem 0;
+                }
+        }
+        .user-info{
+
+            display: flex;
+            form{
+                margin-right: 1rem;
+                button{
+                    background-color: none;
+                    color: $primary-color;
+                    border: $primary-color 2px solid;
+                    
+                    &:hover{
+                        background-color: $primary-color;
+                        color: $black;
+                    }
+                }
+
+            }
+            .user{
+                color: $primary-color;
+                .username{
+                    font-weight: bold;
+
+                }
+            }
+
+        }
+
+    }
+    .main-container{
+        .row{
+            padding: 0;
+            margin: 0;
+            .col{
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .first-half{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .profile-pic{
+                width: 100%;
+                img{
+                    width: 60%;
+                    border-radius: 50%;
+                }
+            
+            }
+            .about{
+                width: 100%;
+                margin-top: 2rem;
+                .about-card{
+                    width: 100%;
+                }
+            }
+        }
+
+        .second-half{
+            margin-bottom: 5rem;
+            .card{
+                // margin-top: 2rem;
+                .card-header{
+                    background: $primary-color;
+                }
+            }
+            .accounts{
+                margin-top: 3rem;
+                .client-info{
+                    .name{
+                        margin-bottom: 0.1rem;
+                        margin-top: 0.6rem;
+                    }
+                    .last-visited{
+                        margin-top: 0;
+                        margin-bottom: 0.6rem;
+                        font-size: 0.8em;
+                        color: darkgray;
+                    }
+                }
+            }
+        }
+
+    }
+
+    #dpButton, #dpDelButton  {
+        background-color: transparent;
+        margin-top: 2rem;
+        color: $primary-color;
+        border: $primary-color 2px solid;
+        font-weight: bold;
+        border-radius: 2.5cm;
+        &:hover{
+            background-color: $primary-color;
+            color: $black;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    #dpDelButton {
+        margin-top: 1rem;
+        border-color: red;
+        color: red;
+        &:hover{
+            background-color: red;
+            color: white;
+        }
+    }
+
+    #newDp{
+        background-color: transparent;
+        margin-top: 2rem;
+        color: $primary-color;
+        border: $primary-color 2px solid;
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+        &:hover{
+            background-color: $primary-color;
+            color: $black;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+
+}
+

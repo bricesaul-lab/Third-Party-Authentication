@@ -1,0 +1,23 @@
+
+@keyframes lock{
+    0%{
+        transform: translate(0,0);
+    }
+    33%{
+        transform: translate(580px,0);
+    }
+    66%{
+        transform: translate(620px,220px);
+    }
+    100%{
+       transform: translate(30px,220px); 
+    }
+}
+
+@keyframes bounce{
+    from{
+        transform: translateY(0);
+    }to{
+        transform: translateY(10px);
+    }
+}

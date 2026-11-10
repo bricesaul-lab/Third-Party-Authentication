@@ -1,0 +1,17 @@
+@media (max-width: 1000px){
+    .login-wrapper{
+        .anim{
+            display: none;
+        }
+        .login-form-container{
+            width: 100vw;
+            .logo{
+                margin-bottom: 2rem;
+                p{
+                    display: block;
+                }
+            }
+        }
+    }
+
+}

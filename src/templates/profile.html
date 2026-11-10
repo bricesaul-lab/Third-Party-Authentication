@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="profile-wrapper">
+        <div class="title container">
+            <div class="logo">
+                <img src="/static/img/darkmode.png" alt="">
+                <p>Third Party Authentication</p>
+            </div>
+            <div class="user-info">
+                <p class="user">You are logged in as : <span class="username">{{user.username}}</span> </p>      
+                <form action="/logout/" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-md">Logout</button>
+                </form>
+            </div>
+
+        </div>
+            <div class="container main-container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="first-half">
+                            <div class="profile-pic d-flex justify-content-center">
+                                {% if user.display %}
+                                <img src="{{user.display.url}}"/>
+                                {% else %}
+                                <img src="/static/img/placeholder.png"/>
+                                {% endif %}
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" id="dpButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dpUpdate">
+                                Update Profile Picture
+                            </button>
+                            {% if user.display %}
+                            <form action="/delDp/" method="post">
+                                {% csrf_token %}
+                                <button type="submit" id="dpDelButton" class = 'btn btn-primary'>
+                                    Delete Profile Picture
+                                </button>
+                            </form>
+                            {% endif %}
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="dpUpdate" tabindex="-1" aria-labelledby="dpUpdateLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="dpUpdateLabel">Update Profile Picture</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form action="/changeDp/" method="post" enctype='multipart/form-data'>
+                                    <div class="modal-body">
+                                        {% csrf_token %}
+                                        <input type="file" name='display' id='display' required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-outline-primary" >Save changes</button>
+                                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    
+                                    
+                                </form>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="about">
+                                <div class="card about-card">
+                                    <div class="card-body">
+                                        <p><strong>{{user.fname}} {{user.lname}}</strong></p>
+                                        <p><span class="email">{{user.email}}</span></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">
+                        <div class="second-half">
+                            <div class="card">
+                                <div class="card-header">
+                                    Account Summary
+                                </div>
+                                <div class="card-body sum-card">
+                                    <div class="personal">
+                                        <p><b>Name:</b>  {{user.fname}} {{user.lname}}</p>
+                                        <p><b>Email:</b>  {{user.email}}</p>
+                                        <p><b>Password:</b>  •••••••••</p>  
+                                        <p><b>Joined 3A on :  </b>{{user.date_joined.date}}</p>
+                                        <p><b>Last login :</b>  {{user.last_login.date}}  </p>  
+                                    </div>
+                                </div>
+            
+                            </div>
+            
+                            <div class="accounts card">
+                                <div class="card-header">
+                                    Connected Accounts
+                                </div>
+                                <div class="row">
+                                    <div class="client-info card col-lg-6 col-sm-12">
+                                        <p class="name">Bookworm Inc.</p>
+                                        <span class="last-visited">
+                                            Last Visited: XYZ
+                                        </span>  
+                                    </div>
+                                    <div class="client-info card col-lg-6 col-sm-12">
+                                        <p class="name">Bookworm Inc.</p>
+                                        <span class="last-visited">
+                                            Last Visited: XYZ
+                                        </span>
+                                    </div>
+                                </div>
+             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+{% endblock %}

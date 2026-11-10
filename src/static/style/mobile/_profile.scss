@@ -1,0 +1,38 @@
+@media (max-width:1000px){
+    .profile-wrapper{
+        .title{
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .logo{
+                img{
+                    margin-left: 2rem;
+                    margin-top: 2rem;
+                    width: 25vw;
+                    height: 25vw;
+                }
+                p{
+                    display: none;
+                }
+            }
+            .user-info{
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+            }
+        }
+    }
+    .first-half{
+        .profile-pic{
+            margin-top: 3rem;
+
+        }
+        .about{
+            display: none;
+        }
+    }
+    .second-half{
+        margin-top: 2rem;
+    }
+}
